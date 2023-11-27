@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Icon -->
+    <link rel="shortcut icon" href="./assets/icon.ico" type="image/png" />
+
+    <!-- Scripts -->
+
+    <script src="./js/script.js" defer type="module"></script>
+
+    <title>Calcular Dizimos e Ofertas</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div>
+          <div class="logo">
+            <a href="">
+              <img src="./assets/Logo.svg" alt="Logo do sistema" />
+              
+            </a>
+          </div>
+        </div>
+      </header>
+      <div class="wrapper">
+        <div class="fildeset-wrapper">
+          <legend>Preencha os campos</legend>
+        </div>
+        <div class="form-wrapper">
+          <form id="my-form">
+            <fieldset>
+              <div class="col-4">
+                <div class="input-wrapper">
+                  <label for="renda">Renda <span>(Renda mensal)</span></label>
+                  <input title="renda" type="text" id="renda" required />
+                </div>
+
+                <div class="input-wrapper">
+                  <label for="dizimo">Dizimo <span>10%</span></label>
+                  <input type="text" id="dizimo" placeholder="10%" disabled />
+                </div>
+
+                <div class="input-wrapper">
+                  <label for="pacto">Pacto <span>(Em %)</span></label>
+                  <input title="Exemplo ( 5 )" type="text" id="pacto"  />
+                </div>
+
+                <div class="input-wrapper">
+                  <label for="oferta">Oferta <span>(Em %)</span></label>
+                  <input type="text" id="oferta" />
+                </div>
+              </div>
+            </fieldset>
+            <button type="submit" class="button-green">
+              Calcular
+              <img src="./assets/arrow.svg" alt="Seta apontando para a direita">
+            </button>
+          </form>
+
+          
+        </div>
+      </div>
+
+      <div class="alert-error ">
+        Digite somente números ou zero (0)
+      </div>
+
+      <div class="modal-wrapper ">
+        <div class="modal card ">
+          <h2 class="title">
+            <button id="close" class="close">
+              <img src="./assets/close.svg" alt="imagem para fechar o popup">
+            </button>
+            
+            <span>Dizimo: </span> 
+            <br> 
+              
+          </h2>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>
