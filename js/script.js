@@ -1,9 +1,9 @@
 
 import { Modal } from "./modal.js"
 import { AlertError } from "./alert-error.js"
-import { calculateDizimo, notANumber, calculatePacto } from "./utils.js"
+import { calculateDizimo, notANumber, calculatePacto, calculateOferta, calculateSoma } from "./utils.js"
 
-
+console.log(calculateSoma())
 // variaveis - variebles
 const form = document.querySelector('form')
 const inputRenda = document.querySelector('#renda')
@@ -33,8 +33,6 @@ form.onsubmit = event => {
   if (weightOrHeightIsNotAnumber) {
     AlertError.open()
     return;
-  }else {
-    0
   }
 
   AlertError.close()
@@ -42,14 +40,23 @@ form.onsubmit = event => {
 
   const result = calculateDizimo(renda, dizimo)
   const resultPacto = calculatePacto(renda, pacto)
-  const resultOferta = calculatePacto(renda, oferta)
-  displayResultMessage(result, resultPacto, resultOferta)
+  const resultOferta = calculateOferta(renda, oferta)
+ 
+
+  let numberDizimo = parseFloat(result);
+  let numberOferta = parseFloat(resultPacto);
+  let numberPacto = parseFloat(resultOferta);
+  
+  let soma = (numberDizimo + numberOferta + numberPacto).toFixed(2)
+  displayResultMessage(result, resultPacto, resultOferta, soma)
+  
 }
 
-function displayResultMessage(result, resultPacto, resultOferta) { 
+function displayResultMessage(result, resultPacto, resultOferta, soma) { 
   const message = `Dizimo: R$ ${result}
                    Pacto:  R$ ${resultPacto}
-                   Oferta: R$ ${resultOferta}`
+                   Oferta: R$ ${resultOferta}
+                   Total: R$ ${soma}`
 
   Modal.message.innerText = message
   Modal.open()

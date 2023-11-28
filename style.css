@@ -196,6 +196,10 @@ form fieldset {
   flex-direction: column;
 }
 
+.title span {
+  line-height:200%
+}
+
 .modal button {
   background: none;
   border: none;
