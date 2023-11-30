@@ -21,12 +21,15 @@ form.onsubmit = event => {
   event.preventDefault()
 
   const renda = inputRenda.value
+  let novaRenda = renda.replace(/[,\.]/g, function (match) {
+    return match === "," ? "." : ","
+  })
   const dizimo = 10
   const pacto = inputPacto.value
   const oferta = inputOferta.value 
   console.log(oferta)
 
-  const weightOrHeightIsNotAnumber = notANumber(renda) || notANumber(dizimo) || notANumber(pacto) || notANumber(oferta)
+  const weightOrHeightIsNotAnumber = notANumber(novaRenda) || notANumber(dizimo) || notANumber(pacto) || notANumber(oferta)
 
   
 
@@ -38,9 +41,9 @@ form.onsubmit = event => {
   AlertError.close()
 
 
-  const result = calculateDizimo(renda, dizimo)
-  const resultPacto = calculatePacto(renda, pacto)
-  const resultOferta = calculateOferta(renda, oferta)
+  const result = calculateDizimo(novaRenda, dizimo)
+  const resultPacto = calculatePacto(novaRenda, pacto)
+  const resultOferta = calculateOferta(novaRenda, oferta)
  
 
   let numberDizimo = parseFloat(result);
